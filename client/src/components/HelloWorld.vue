@@ -1,17 +1,27 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>{{ num }}</h2>
-    
+    <h2>{{ someNumber }}</h2>
+    <button @click="increase()">+</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data: function (){
+    return{
+      someNumber: 0
+    }
+  },
   props: {
     msg: String,
     num: Number
+  },
+  methods:{
+    increase: function(){
+      this.someNumber++
+    }
   }
 }
 </script>
